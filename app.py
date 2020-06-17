@@ -36,6 +36,7 @@ def desenvolvedor(id):
     elif request.method == 'DELETE':
         desenvolvedores.pop(id)
         return jsonify({'status':'sucesso', 'mensagem':'Registro excluido com sucesso'})
+
 @app.route('/dev/', methods=['POST', 'GET'])
 def lista_desenvolvedores():
     if request.method == 'POST':
@@ -46,7 +47,6 @@ def lista_desenvolvedores():
         return jsonify(desenvolvedores[posicao])
     elif request.method == 'GET':
         return jsonify(desenvolvedores)
-
 
 
 if __name__ == '__main__':
